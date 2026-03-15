@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BTS ARMY — Purple Universe Fan Site</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@300;400;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+     LOADING SCREEN
+═══════════════════════════════════════════ -->
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-bts">BTS</span>
+        <div class="loader-tagline">방탄소년단</div>
+      </div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"></div>
+      </div>
+      <div class="loader-text">Loading Purple Universe…</div>
+    </div>
+    <!-- Floating orbs -->
+    <div class="loader-orb orb-1"></div>
+    <div class="loader-orb orb-2"></div>
+    <div class="loader-orb orb-3"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════ -->
+  <nav id="navbar" class="navbar glass">
+    <div class="nav-brand">
+      <span class="nav-bts">BTS</span>
+      <span class="nav-army">ARMY HUB</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#members" class="nav-link">Members</a></li>
+      <li><a href="#solo" class="nav-link">Solo Works</a></li>
+      <li><a href="#albums" class="nav-link">Albums</a></li>
+      <li><a href="#timeline" class="nav-link">Timeline</a></li>
+      <li><a href="#videos" class="nav-link">Videos</a></li>
+      <li><a href="#quiz" class="nav-link">Quiz</a></li>
+      <li><a href="#countdown" class="nav-link">Comeback</a></li>
+      <li><a href="#fanwall" class="nav-link">Fan Wall</a></li>
+    </ul>
+    <div class="nav-controls">
+      <!-- Dark/Light toggle -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+     HOME / HERO SECTION
+═══════════════════════════════════════════ -->
+  <section id="home" class="hero">
+    <!-- Animated particle canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Floating geometric shapes -->
+    <div class="hero-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">방탄소년단 · Since 2013</div>
+      <h1 class="hero-title">
+        <span class="hero-title-main">BTS</span>
+        <span class="hero-title-sub">Bangtan Sonyeondan</span>
+      </h1>
+      <p class="hero-subtitle">
+        Welcome, ARMY 💜<br />
+        Dive into the Purple Universe — music, stories, and memories that connect us all.
+      </p>
+      <div class="hero-cta">
+        <a href="#members" class="btn btn-primary">
+          <i class="fas fa-users"></i> Meet the Members
+        </a>
+        <a href="#videos" class="btn btn-ghost">
+          <i class="fas fa-play-circle"></i> Watch MVs
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">7</span>
+          <span class="stat-label">Members</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">9+</span>
+          <span class="stat-label">Studio Albums</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">50M+</span>
+          <span class="stat-label">ARMY Worldwide</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">2</span>
+          <span class="stat-label">Grammy Nominations</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+     MEMBERS OVERVIEW SECTION
+═══════════════════════════════════════════ -->
+  <section id="members" class="section members-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The Seven</span>
+        <h2 class="section-title">Meet BTS</h2>
+        <p class="section-desc">Seven unique souls, one universe. Click any member to explore their world.</p>
+      </div>
+
+      <div class="members-grid" id="membersGrid">
+        <!-- Cards injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+     INDIVIDUAL MEMBER DETAIL MODAL
+═══════════════════════════════════════════ -->
+  <div id="memberModal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-box glass">
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+     SOLO WORKS SECTION
+═══════════════════════════════════════════ -->
+  <section id="solo" class="section solo-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Solo Universe</span>
+        <h2 class="section-title">Solo Works</h2>
+        <p class="section-desc">Each member shines individually — explore their solo discographies.</p>
+      </div>
+
+      <!-- Member filter tabs -->
+      <div class="solo-tabs" id="soloTabs"></div>
+
+      <!-- Solo cards grid -->
+      <div class="solo-grid" id="soloGrid"></div>
+    </div>
+  </section>
+
+  <!-- Solo Detail Popup -->
+  <div id="soloPopup" class="popup-overlay">
+    <div class="popup-box glass">
+      <button class="popup-close" id="soloPopupClose"><i class="fas fa-times"></i></button>
+      <div id="soloPopupContent"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+     BTS GROUP ALBUMS SECTION
+═══════════════════════════════════════════ -->
+  <section id="albums" class="section albums-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Discography</span>
+        <h2 class="section-title">BTS Albums</h2>
+        <p class="section-desc">A decade of musical masterpieces. Click an album to see the tracklist.</p>
+      </div>
+      <div class="albums-grid" id="albumsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Album Tracklist Popup -->
+  <div id="albumPopup" class="popup-overlay">
+    <div class="popup-box glass">
+      <button class="popup-close" id="albumPopupClose"><i class="fas fa-times"></i></button>
+      <div id="albumPopupContent"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+     TIMELINE SECTION
+═══════════════════════════════════════════ -->
+  <section id="timeline" class="section timeline-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The Journey</span>
+        <h2 class="section-title">BTS Milestones</h2>
+        <p class="section-desc">From debut to global phenomenon — a decade of breaking records.</p>
+      </div>
+      <div class="timeline" id="timelineContainer"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+     VIDEO SECTION
+═══════════════════════════════════════════ -->
+  <section id="videos" class="section videos-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Visual Arts</span>
+        <h2 class="section-title">Music Videos</h2>
+        <p class="section-desc">Iconic visuals that changed music history.</p>
+      </div>
+      <div class="videos-grid" id="videosGrid"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+     QUIZ SECTION
+═══════════════════════════════════════════ -->
+  <section id="quiz" class="section quiz-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Test Your Knowledge</span>
+        <h2 class="section-title">ARMY Quiz</h2>
+        <p class="section-desc">How well do you really know BTS? Let's find out!</p>
+      </div>
+
+      <div class="quiz-container glass" id="quizContainer">
+        <!-- Quiz start screen -->
+        <div id="quizStart" class="quiz-screen">
+          <div class="quiz-start-icon">💜</div>
+          <h3>Are You a True ARMY?</h3>
+          <p>10 questions about BTS — music, members, and milestones. Ready?</p>
+          <button class="btn btn-primary" id="startQuizBtn">
+            <i class="fas fa-play"></i> Start Quiz
+          </button>
+        </div>
+
+        <!-- Quiz question screen -->
+        <div id="quizQuestion" class="quiz-screen hidden">
+          <div class="quiz-progress">
+            <div class="quiz-progress-bar" id="quizProgressBar"></div>
+          </div>
+          <div class="quiz-meta">
+            <span id="quizQNum">Question 1 / 10</span>
+            <span id="quizScore">Score: 0</span>
+          </div>
+          <div class="quiz-q" id="quizQ"></div>
+          <div class="quiz-options" id="quizOptions"></div>
+        </div>
+
+        <!-- Quiz result screen -->
+        <div id="quizResult" class="quiz-screen hidden">
+          <div id="quizResultEmoji" class="quiz-result-emoji"></div>
+          <h3 id="quizResultTitle"></h3>
+          <p id="quizResultText"></p>
+          <div class="quiz-final-score" id="quizFinalScore"></div>
+          <button class="btn btn-primary" id="retryQuizBtn">
+            <i class="fas fa-redo"></i> Try Again
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+     COUNTDOWN SECTION
+═══════════════════════════════════════════ -->
+  <section id="countdown" class="section countdown-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Coming Soon</span>
+        <h2 class="section-title">BTS Comeback</h2>
+        <p class="section-desc">The wait is almost over, ARMY. They're coming back together — 2026!</p>
+      </div>
+
+      <div class="countdown-wrapper glass">
+        <div class="countdown-event-name">BTS FULL GROUP COMEBACK 2026 💜</div>
+        <div class="countdown-timer" id="countdownTimer">
+          <div class="cd-block">
+            <span class="cd-num" id="cdDays">00</span>
+            <span class="cd-label">Days</span>
+          </div>
+          <div class="cd-sep">:</div>
+          <div class="cd-block">
+            <span class="cd-num" id="cdHours">00</span>
+            <span class="cd-label">Hours</span>
+          </div>
+          <div class="cd-sep">:</div>
+          <div class="cd-block">
+            <span class="cd-num" id="cdMins">00</span>
+            <span class="cd-label">Minutes</span>
+          </div>
+          <div class="cd-sep">:</div>
+          <div class="cd-block">
+            <span class="cd-num" id="cdSecs">00</span>
+            <span class="cd-label">Seconds</span>
+          </div>
+        </div>
+        <p class="countdown-sub">Target date: June 13, 2026 — BTS 13th Anniversary 🎂</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+     FAN MESSAGE / GUESTBOOK SECTION
+═══════════════════════════════════════════ -->
+  <section id="fanwall" class="section fanwall-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">ARMY Voices</span>
+        <h2 class="section-title">Fan Wall</h2>
+        <p class="section-desc">Leave a message for BTS and share your love with fellow ARMY.</p>
+      </div>
+
+      <div class="fanwall-layout">
+        <!-- Form -->
+        <div class="fanwall-form glass">
+          <h3>Leave a Message 💜</h3>
+          <div class="form-group">
+            <label for="fanName">Your Name / ARMY Name</label>
+            <input type="text" id="fanName" placeholder="e.g. PurpleHeart_Seoul" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label for="fanCountry">Country</label>
+            <input type="text" id="fanCountry" placeholder="e.g. India 🇮🇳" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label for="fanFavorite">Favorite Member</label>
+            <select id="fanFavorite" class="form-input">
+              <option value="">— Choose your bias —</option>
+              <option>RM (Namjoon)</option>
+              <option>Jin (Seokjin)</option>
+              <option>Suga (Yoongi)</option>
+              <option>J-Hope (Hoseok)</option>
+              <option>Jimin</option>
+              <option>V (Taehyung)</option>
+              <option>Jungkook</option>
+              <option>All 7! 💜</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fanMsg">Your Message</label>
+            <textarea id="fanMsg" rows="4" placeholder="Write your message to BTS…" class="form-input"></textarea>
+          </div>
+          <button class="btn btn-primary full-width" id="fanSubmitBtn">
+            <i class="fas fa-paper-plane"></i> Post to Fan Wall
+          </button>
+        </div>
+
+        <!-- Messages wall -->
+        <div class="fanwall-messages" id="fanMessages">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">BTS</div>
+          <p class="footer-tagline">방탄소년단 — Bulletproof Boy Scouts<br />Protecting the hearts of ARMY worldwide 💜</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="Weverse"><i class="fas fa-star"></i></a>
+            <a href="#" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-nav">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#members">Members</a></li>
+            <li><a href="#solo">Solo Works</a></li>
+            <li><a href="#albums">Albums</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav">
+          <h4>Discover</h4>
+          <ul>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#videos">Music Videos</a></li>
+            <li><a href="#quiz">ARMY Quiz</a></li>
+            <li><a href="#countdown">Comeback</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="#fanwall">Fan Wall</a></li>
+            <li><a href="#">ARMY Forum</a></li>
+            <li><a href="#">BTS Official</a></li>
+            <li><a href="#">HYBE Labels</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 BTS ARMY Hub — Fan-made site. Not affiliated with HYBE or BTS.</p>
+        <p>Made with 💜 for ARMY everywhere</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script type="module" src="/script.js"></script>
+  <div class="side-popup left-popup">💜 Welcome ARMY 💜</div>
+  <div class="side-popup right-popup">✨ Enjoy BTS Universe ✨</div>
+</body>
+
+</html>
